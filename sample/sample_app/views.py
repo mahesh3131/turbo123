@@ -75,6 +75,9 @@ def reg_post(request):
 				user.save()
 				messages.success(request,'registered successfully')
 				return render(request,'sample_app/login.html')
+			else:
+				messages.error(request,'registration failed')
+				return render(request,'sample_app/register.html')
 	except:
 		messages.error(request,'registration failed')
 		return render(request,'sample_app/register.html')
